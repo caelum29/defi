@@ -74,6 +74,7 @@ export class AppService implements OnModuleInit {
     };
 
     const timeout = setTimeout(callback, 1000 * 60);
+
     this.schedulerRegistry.addTimeout('writeFile', timeout);
   }
 }

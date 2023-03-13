@@ -14,7 +14,7 @@ export class Web3Service {
     this.web3 = new Web3(provider);
   }
 
-  async getBalances(address: string): Promise<any> {
+  async getBalances(address: string): Promise<string> {
     return await this.web3.eth.getBalance(address);
   }
 
@@ -26,7 +26,10 @@ export class Web3Service {
     return this.web3.utils.fromWei(wei, 'ether');
   }
 
-  async getBalanceAndNameOfContract(address: string, erc20Address: string) {
+  async getBalanceAndNameOfContract(
+    address: string,
+    erc20Address: string,
+  ): Promise<{ name: string; balance: string }> {
     const minABI = [
       // balanceOf
       {

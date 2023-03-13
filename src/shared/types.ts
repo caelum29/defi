@@ -12,7 +12,6 @@ export interface ModuleAsyncOptions<T> {
 }
 
 export type ModuleImport = Array<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Type<any> | DynamicModule | Promise<DynamicModule> | ForwardReference
 >;
 
